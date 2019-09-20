@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/p")
+@RequestMapping("/item")
 public class ItemController {
 
     @Autowired

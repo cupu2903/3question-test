@@ -23,8 +23,6 @@ public class CartController {
     @Autowired
     CartItemService cartItemService;
     @Autowired
-    ItemService itemService;
-    @Autowired
     UsersService usersService;
 
     @PostMapping("/create")

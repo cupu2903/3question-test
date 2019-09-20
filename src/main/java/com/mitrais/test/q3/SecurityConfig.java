@@ -26,9 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         // @formatter:off
         http.csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/cart/**","/checkout").permitAll();
+                .antMatchers(HttpMethod.POST, "/cart/**","/checkout", "/item/**").permitAll();
 //                .anyRequest().authenticated().and()
-//                .addFilter(new JWTAuthenticationFilter(authenticationManager(), acctService))
+//                .addFilter(new JWTAuthenticationFilter(authenticationManager(), userService))
 //                .addFilter(new JWTAuthorizationFilter(authenticationManager()))
                 // this disables session creation on Spring Security
 //                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
