@@ -2,6 +2,10 @@ package com.mitrais.test.q3.util.model;
 
 import com.mitrais.test.q3.repository.domain.*;
 import com.mitrais.test.q3.services.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.*;
 
@@ -10,6 +14,11 @@ import java.time.*;
  * @version 1.0
  * @since 19/09/2019
  */
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RegularCustomer extends Users implements DiscountService {
 
     @Override

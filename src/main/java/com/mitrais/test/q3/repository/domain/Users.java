@@ -1,5 +1,10 @@
 package com.mitrais.test.q3.repository.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.*;
 import java.time.*;

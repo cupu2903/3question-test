@@ -72,14 +72,10 @@ public class CartControllerTest {
         CartItem cartItem = new CartItem();
         Mockito.when(cartItemService.create(cartItem)).thenReturn(cartItem);
 
-//        mockMvc.perform(post("/cart/create")
-//                .content(new ObjectMapper().writeValueAsString(reqDto))
-//                .contentType("application/json"))
-//                .andExpect(status().isOk());
-
-        MvcResult mvcResult = mockMvc.perform(post("/cart")
+        MvcResult mvcResult = mockMvc.perform(post("/cart/create")
                 .content(new ObjectMapper().writeValueAsString(reqDto))
                 .contentType("application/json"))
+                .andExpect(status().isOk())
                 .andReturn();
 
         String actualResponseBody = mvcResult.getResponse().getContentAsString();
