@@ -22,7 +22,7 @@ public class StoreAndLoad {
 
     }
 
-    private static String store(HashMap<String, String>[] a) {
+    public static String store(HashMap<String, String>[] a) {
         if(a.length>0){
             StringBuilder sb = new StringBuilder();
             for(int i=0;i<a.length;++i){
@@ -46,7 +46,7 @@ public class StoreAndLoad {
 
     }
 
-    private static HashMap<String, String>[] load(String text) {
+    public static HashMap<String, String>[] load(String text) {
         String[] items = text.split("\n");
         if (items.length > 0) {
             HashMap<String, String>[] maps = new HashMap[items.length];

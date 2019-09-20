@@ -39,6 +39,7 @@ public class GraphTraversal {
 
     /**
      * this method using breadth first traversal, so we will collect all nodes directed to root
+     * this method approach to collect node widely, and then we go deeper via Depth First Traversal method
      * @param graph
      * @param root
      * @return

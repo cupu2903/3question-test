@@ -19,8 +19,7 @@ public class Main {
         return graph;
     }
 
-    public static void main(String[] args) {
-        Graph graph = createGraph();
+    public static int getMaxPath(Graph graph){
 
         System.out.println("---------");
         List<Set<String>> allPossiblePath = findAllPossiblePath(graph);
@@ -35,7 +34,13 @@ public class Main {
             }
             max = Math.max(max, weight);
         }
-        System.out.println("Max Path = "+max);
+        return max;
+    }
+
+    public static void main(String[] args) {
+        Graph graph = createGraph();
+        int maxPath = getMaxPath(graph);
+        System.out.println("Max Path = "+maxPath);
     }
 
 
@@ -45,7 +50,7 @@ public class Main {
      * @param graph
      * @return
      */
-    private static List<Set<String>> findAllPossiblePath(Graph graph) {
+    public static List<Set<String>> findAllPossiblePath(Graph graph) {
         List<Set<String>> sets = new ArrayList<>();
         for (Graph.Vertex v : graph.getAdjVertices().keySet()) {
             System.out.println("Vertex :" + v.label);

@@ -81,7 +81,7 @@ public class CheckoutController {
         }
 
         respDto.setDiscountPercent(customer.getDiscount());
-        int discount = customer.getDiscount() * subtotal;
+        int discount = (customer.getDiscount() * subtotal) / 100;
         int total = subtotal - discount;
         int additionalDiscount = (total / 100) * 5; // to prevent no 4
         total -= additionalDiscount;
