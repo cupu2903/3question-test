@@ -15,10 +15,6 @@ import java.time.*;
  * @since 19/09/2019
  */
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class RegularCustomer extends Users implements DiscountService {
 
     @Override

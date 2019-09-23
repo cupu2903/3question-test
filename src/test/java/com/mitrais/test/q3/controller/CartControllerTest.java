@@ -2,6 +2,7 @@ package com.mitrais.test.q3.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mitrais.test.q3.*;
 import com.mitrais.test.q3.repository.domain.*;
 import com.mitrais.test.q3.services.*;
 import com.mitrais.test.q3.web.controller.*;
@@ -13,6 +14,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -29,6 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = CartController.class)
+@Import(SecurityConfig.class)
 public class CartControllerTest {
 
     @Autowired
@@ -55,7 +58,7 @@ public class CartControllerTest {
         mockMvc.perform(post("/cart/create")
                 .content(new ObjectMapper().writeValueAsString(dto))
                 .contentType("application/json"))
-                .andExpect(status().isForbidden());
+                .andExpect(status().isBadRequest());
     }
 
     @Test

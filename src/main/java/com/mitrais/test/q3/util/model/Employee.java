@@ -12,9 +12,6 @@ import java.net.*;
  * @version 1.0
  * @since 19/09/2019
  */
-@Data
-@Builder
-@NoArgsConstructor
 public class Employee extends RegularCustomer {
 
     @Override

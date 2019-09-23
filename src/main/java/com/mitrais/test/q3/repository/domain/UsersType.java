@@ -15,7 +15,7 @@ import java.io.*;
  */
 
 @Entity
-@Table(name = "users_type")
+@Table(name = "user_type")
 public class UsersType implements Serializable {
     @Id
     @Column(name = "users_type")

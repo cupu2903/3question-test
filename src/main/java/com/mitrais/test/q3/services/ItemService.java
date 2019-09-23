@@ -3,9 +3,9 @@ package com.mitrais.test.q3.services;
 import com.mitrais.test.q3.repository.*;
 import com.mitrais.test.q3.repository.domain.*;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.*;
 
 /**
  * @author Achmad Yusuf Ramadhan cupu2903@gmail.com

@@ -1,12 +1,18 @@
 package com.mitrais.test.q3.controller;
 
+import com.mitrais.test.q3.*;
+import com.mitrais.test.q3.repository.domain.*;
 import com.mitrais.test.q3.services.*;
+import com.mitrais.test.q3.util.*;
+import com.mitrais.test.q3.web.controller.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.domain.Page;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -22,7 +28,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(controllers = ItemController.class)
+@Import(SecurityConfig.class)
 public class ItemControllerTest {
 
     @Autowired
@@ -31,9 +38,12 @@ public class ItemControllerTest {
     @MockBean
     ItemService itemService;
 
+    @MockBean
+    ModelMapper mapper;
+
     @Test
     public void statusOk() throws Exception{
-        Mockito.when(itemService.findAll()).thenReturn(new ArrayList<>());
+        Mockito.when(itemService.findAll(null)).thenReturn(null);
         mockMvc.perform(get("/item")).andExpect(status().isOk());
 
     }

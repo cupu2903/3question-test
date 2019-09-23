@@ -15,6 +15,7 @@ import java.time.*;
  * @since 19/09/2019
  */
 @Entity
+@Table(name = "users")
 public class Users implements Serializable {
 
     @Id

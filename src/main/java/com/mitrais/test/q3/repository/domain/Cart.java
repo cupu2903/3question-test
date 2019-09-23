@@ -10,6 +10,7 @@ import java.time.*;
  * @since 19/09/2019
  */
 @Entity
+@Table(name = "cart")
 public class Cart implements Serializable {
     @Id
     @Column(name = "cart_id")

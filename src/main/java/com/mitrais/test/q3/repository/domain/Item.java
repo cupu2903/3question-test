@@ -1,9 +1,10 @@
 package com.mitrais.test.q3.repository.domain;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.*;
 
 /**
@@ -13,6 +14,7 @@ import java.io.*;
  */
 
 @Entity
+@Table(name = "item")
 public class Item implements Serializable {
     @Id
     @Column(name = "item_code")
