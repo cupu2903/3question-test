@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mitrais.katalis</groupId>
+    <groupId>com.mitrais</groupId>
     <artifactId>test</artifactId>
     <version>1.0</version>
 
@@ -83,6 +83,11 @@
             <version>7.4.0.jre8</version>
             <scope>${scope-setting}</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
